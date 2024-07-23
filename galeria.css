@@ -249,7 +249,8 @@
         justify-content: center !important;
         margin-left: 3rem !important;
         margin-right: 3rem !important;
-        margin-bottom: 2rem !important;
+        text-align: center;
+        
     }
 
     .underline:hover::before{
@@ -261,6 +262,14 @@
         display: none !important;
     }
 
+    .magyarazat2{
+        display:block !important;
+        color: #fff;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        text-align: center !important;
+        padding-bottom: 1rem;
+    }
 
 }
 
@@ -286,6 +295,10 @@
     }
     
     
+    .underline{
+        text-align: center !important;
+    }
+
 }
 
 
@@ -402,4 +415,9 @@
     color: transparent;
     text-decoration: none;
 
+}
+
+
+.magyarazat2{
+    display: none;
 }
