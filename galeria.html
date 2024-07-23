@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="galeria.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta property="og:image" content="szineshatter.jpg">
+    <meta name="description" content="Ahol játék a tanulás">
+    <title>Orosházi Ovisuli</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+    <div class="container"></div>
+    <header class="header">
+
+    
+        <img src="logo.png" class="logo" alt="">
+    
+    
+    <input type="checkbox" id="check">
+
+    <label for="check" class="icons">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+    </label>
+
+    <nav class="navbar">
+        <a href="index.html">Főoldal</a>
+        <a href="rolunk.html">Rólunk</a>
+        <a href="iskolaelokeszito.html">Iskolaelőkészítő</a>
+        <a href="taborok.html">Táborok</a>
+        <a href="jelentkezes.html">Jelentkezés</a>
+        <a href="galeria.html">Galéria</a>
+    </nav>
+</header>
+
+
+
+<a href="#img-galleries" id="link"><h1 class="underline">
+   2024 Indián tábor 
+</h1></a>
+
+<p class="magyarazat">(A képre kattintva a billentyűzeten lévő nyilak segítségével lehet lapozni a képek között)</p>
+
+
+<div class="full-img" id="fullImgBox">
+    <img src="001.jpg" id="fullImg">
+    <span onclick="closeFullImg()">X</span>
+</div>
+
+
+<div class="img-gallery" id="img-galleries">
+    <img src="001.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="002.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="003.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="4.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="5.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="6.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="8.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="9.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="10.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="11.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="12.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="13.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="14.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="15.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="16.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="17.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="18.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="19.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="20.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="23.jpg" alt="" onclick="openFullImg(this.src)"> 
+    <img src="22.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="24.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="27.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="28.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="31.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="32.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="33.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="34.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="35.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="36.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="37.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="38.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="39.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="40.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="41.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="42.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="43.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="44.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="45.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="46.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="47.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="48.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="49.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="50.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="51.jpg" alt="" onclick="openFullImg(this.src)">
+    <img src="52.jpg" alt="" onclick="openFullImg(this.src)">
+
+</div>
+
+
+<script>
+    var fullImgBox = document.getElementById("fullImgBox");
+    var fullImg = document.getElementById("fullImg");
+    var images = document.querySelectorAll('.img-gallery img');
+    var currentIndex = 0;
+
+    function openFullImg(pic) {
+        fullImgBox.style.display = "flex";
+        fullImg.src = pic; 
+        currentIndex = Array.from(images).findIndex(img => img.src === pic);
+    }
+
+    function closeFullImg() {
+        fullImgBox.style.display = "none";
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        fullImg.src = images[currentIndex].src;
+    }
+
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        fullImg.src = images[currentIndex].src;
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (fullImgBox.style.display === "flex") {
+            if (event.key === "ArrowRight") {
+                showNextImage();
+            } else if (event.key === "ArrowLeft") {
+                showPrevImage();
+            }
+        }
+    });
+</script>
+
+
+
